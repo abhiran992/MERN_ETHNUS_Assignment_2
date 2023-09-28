@@ -1,0 +1,31 @@
+<html>
+
+<head>
+    <title>Examples</title>
+    <script>
+        function alphaOrder() {
+            var str = String(document.getElementById("demo").value);
+            var arr = str.split("");
+            arr.sort();
+            arr.reverse()
+            var sortedStr = arr.join("");
+
+            arr = sortedStr.split("");
+            arr.reverse()
+            sortedStr = arr.join("");
+
+            const ans = document.createElement('h2');
+            ans.innerText = sortedStr;
+            document.body.appendChild(ans);
+        }
+    </script>
+</head>
+
+<body>
+
+    Enter a String: <input id="demo">
+    <button onclick="alphaOrder()">Check</button></br></br>
+    <div id="result"></div>
+</body>
+
+</html>
