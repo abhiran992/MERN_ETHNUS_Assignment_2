@@ -1,0 +1,188 @@
+<html>
+    <head>
+        <title>JSTask-8</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <style>
+            .table{
+                border-collapse:collapse;
+            }
+            .form-control, .form-select{
+                border: 1px solid black;
+            }
+            body{
+                padding: auto;
+                background-image:linear-gradient(yellow , pink 80%);
+            }
+            .btn{
+                border-radius: 25px;
+                width: 100px;
+            }
+            .input-group-text{
+                border: none;
+            }
+        </style>
+    </head>
+    <body >
+        <center>
+            <h1 style="color:blue;">Registration form</h1>
+            <form class="form mt-4" style="max-width:60%;">
+                <table class="table table-borderless" id ="myTable">
+                    <tr>
+                        <th><label class="form-label" for="firstname">First Name</label></th>
+                        <td>
+                            <input class="form-control" type="text" name="firstname" id="firstname"/>
+                            </td>
+                            <td>
+                                <span class="input-group-text bg-transparent text-danger" id="error_firstname"></span>
+                            </td>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <th><label class="form-label" for="lastname">Last Name</label></th>
+                        <td>
+                            <input class="form-control" type="text" name="lastname"  id="lastname"/>
+                        </td>
+                        <td>
+                            <span class="input-group-text bg-transparent text-danger" id="error_lastname"></span>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <th><label class="form-label" for="email">Email</label></th>
+                        <td>
+                            <input class="form-control" type="email" name="email"  id="email"/>
+                        </td>
+                        <td>
+                            <span class="input-group-text bg-transparent text-danger" id="error_email"></span>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <th><label class="form-label" for="password">Password</label></th>
+                        <td>
+                            <input class="form-control" type="password" name="password" id="password"/>
+                        </td>
+                        <td>
+                            <span class="input-group-text bg-transparent text-danger" id="error_password"></span>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <th><label class="form-label" for="repassword">Re-enter Password</label></th>
+                        <td>
+                            <input class="form-control" type="password" name="repassword" id="repassword"/>
+                        </td>
+                        <td>
+                            <span class="input-group-text bg-transparent text-danger" id="error_repassword"></span>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <th><label class="form-label" for="gender">Gender:</label></th>
+                        <td><input class="form-check-input" type="radio" name="gender" id="male" value="male"/>
+                            <label class="form-check-label" for="male">Male</label><br/>
+                            <input class="form-check-input" type="radio" name="gender" id="female" value="female"/>
+                            <label class="form-check-label" for="female">Female</label></td>     
+                    </tr>
+    
+                    <tr>
+                        <th><label class="form-label" for="age">Age:</label></th>
+                        <td>
+                            <input class="form-control" type="number" name="age" id="age"/>
+                        </td>
+                        <td>
+                            <span class="input-group-text bg-transparent text-danger" id="error_age"></span>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <th><label class="form-label" for="phone">Phone Number</label></th>
+                        <td>
+                            <input class="form-control" type="tel" name="phone" id="phone" maxlength="10"/>
+                        </td>
+                        <td>
+                            <span class="input-group-text bg-transparent text-danger" id="error_phone"></span>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <th><label class="form-label" for="address">Address</label></th>
+                        <td>
+                            <textarea class="form-control" id="address"></textarea>
+                        </td>
+                        <td>
+                            <span class="input-group-text bg-transparent text-danger" id="error_address"></span>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <th><label class="form-label" for="state">State</label></th>
+                        <td>
+                            <input class="form-control" type="text" name="state" id="state"/>
+                        </td>
+                        <td>
+                            <span class="input-group-text bg-transparent text-danger" id="error_state"></span>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <th><label class="form-label" for="country">Country</label></th>
+                        <td><select class="form-select"  id="country" value="country">
+                            <option value="Choose" selected>Choose your country</option>
+                            <option value="India">India</option>
+                            <option value="France">France</option>
+                            <option value="Germany">Germany</option>
+                            <option value="Canada">Canada</option>
+                            <option value="Unitedstates">United States</option>
+                            <option value="Australia">Australia</option>
+                        </td>
+                   </tr>
+    
+                   <tr>
+                    <th><label class="form-label" for="languages">Languages Known</label></th>
+                    <td><input class="form-check-input" type="checkbox" name="English" value="English"/>
+                        <label class="form-check-label mx-1" for="English">English</label>
+                        <input class="form-check-input" type="checkbox" name="Kannada" value="Kannada"/>
+                        <label class="form-check-label mx-1" for="Kannada">Kannada</label>
+                        <input class="form-check-input" type="checkbox" name="Hindi" value="Hindi"/>
+                        <label class="form-check-label mx-1" for="Hindi">Hindi</label>
+                        <input class="form-check-input" type="checkbox" name="Telugu" value="Telugu"/>
+                        <label class="form-check-label mx-1" for="Telugu">Telugu</label>
+                </tr>
+    
+                <tr>
+                    <td colspan="2"><input class="form-check-input" type="checkbox" name="confirm" value="confirm"/>
+                        Hereby I declare all the given details are true</td>
+                </tr>     
+                
+                <tr>
+                    <td colspan="2" align="right">Log in to <a href="https://ethnus.com/">Ethnus</a> website</td>
+                </tr>
+                </table>
+               <input class="btn btn-danger btn-sm btn-outline-dark text-light" onclick="errorMessage()" type="submit" value="Register" />
+            </form>
+        </center>
+
+        <script>
+            function addPoorText() {
+                document.getElementById("error_firstname").textContent = "POOR";
+                document.getElementById("error_lastname").textContent = "POOR";
+                document.getElementById("error_email").textContent = "POOR";
+                document.getElementById("error_password").textContent = "POOR";
+                document.getElementById("error_repassword").textContent = "POOR OR MISMATCH";
+                document.getElementById("error_age").textContent = "POOR";
+                document.getElementById("error_state").textContent = "POOR";
+                document.getElementById("error_address").textContent = "POOR";
+                document.getElementById("error_phone").textContent = "POOR";
+                
+                
+            }
+        
+            window.onload = addPoorText;
+        </script>
+
+
+
+</body>
+</html>

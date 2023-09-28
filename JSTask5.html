@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSTask-5</title>
+    <style>
+        .error-input {
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <br/>
+        <table align="center">
+            <tr>
+                <td>
+                    <label for="name">Name:</label>
+                </td>
+                <td>
+                    <input type="text" name="name" id="name"/>
+                    <span id="nameError" style="color: red;"></span>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <label for="email">Email:</label>
+                </td>
+                <td>
+                    <input type="email" name="email" id="email"/>
+                    <span id="emailError" style="color: red;"></span>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <label for="website">Website:</label>
+                </td>
+                <td>
+                    <input type="url" name="website" id="website"/>
+                    <span id="websiteError" style="color: red;"></span>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <label for="message">Message:</label>
+                </td>
+                <td>
+                    <textarea name="message" id="message"></textarea>
+                    <span id="messageError" style="color: red;"></span>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <input name="form" type="submit" value="Submit" onclick="return validateForm()"/>
+                </td>
+            </tr>
+        </table>
+    </form>
+    <script>
+        window.onload = function () {
+            validateFormOnLoad();
+        };
+
+        function validateFormOnLoad() {
+            validateField("name");
+            validateField("email");
+            validateField("website");
+            validateField("message");
+        }
+
+        function validateField(fieldName) {
+            var fieldValue = document.getElementById(fieldName).value;
+            var fieldInput = document.getElementById(fieldName);
+            var fieldError = document.getElementById(fieldName + "Error");
+
+            if (fieldValue === "") {
+                fieldError.innerHTML = "This field is required";
+                fieldInput.classList.add("error-input");
+            } else {
+                fieldError.innerHTML = "";
+                fieldInput.classList.remove("error-input");
+            }
+        }
+
+        function validateForm() {
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var website = document.getElementById("website").value;
+            var message = document.getElementById("message").value;
+
+            var errors = [];
+
+            if (name === "") {
+                errors.push("Name is required");
+            }
+
+            if (email === "") {
+                errors.push("Email is required");
+            }
+
+            if (website === "") {
+                errors.push("Website URL is required");
+            }
+
+            if (message === "") {
+                errors.push("Message is required");
+            }
+
+            document.getElementById("nameError").innerHTML = errors.includes("Name is required") ? "This field is required" : "";
+            document.getElementById("emailError").innerHTML = errors.includes("Email is required") ? "A valid email address is required" : "";
+            document.getElementById("websiteError").innerHTML = errors.includes("Website URL is required") ? "A valid URL is required" : "";
+            document.getElementById("messageError").innerHTML = errors.includes("Message is required") ? "This field is required" : "";
+
+            if (errors.length > 0) {
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</body>
+</html>

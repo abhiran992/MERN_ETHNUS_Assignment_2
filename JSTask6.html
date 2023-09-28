@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSTask-6</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .container {
+            width: 28%;
+            background-color: rgb(236, 234, 234);
+            text-align: center;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+        h3 {
+            font-family: "Sofia", sans-serif;
+            font-size: 30px;
+            text-shadow: 3px 3px 3px #ababab;
+            font-style: italic;
+        }
+        .table {
+            padding: 0;
+            margin: 0;
+        }
+        .password-remember {
+            display: flex; 
+        }
+        .d1{
+            text-align: right;
+            margin-left: 69px;
+        }
+        .btn{
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form action="https://www.instagram.com/" onsubmit="return validate()" class="form mt-5"> 
+            <table class="table table-borderless"> 
+                <tr>
+                    <td><h3 class="text-center mt-1">Instagram</h3></td>
+                </tr>
+                <div id="invalid-msg"></div>
+                <tr>
+                    <td>
+                        <div class="input-group">
+                            <span class="input-group-append">
+                                <div class="input-group-text bg-transparent py-2"><i class="fa fa-user"></i></div>
+                            </span>
+                            <input id="i1" class="form-control py-1 border-left-0 border" type="text" placeholder="Username" required/>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="input-group">
+                            <span class="input-group-append">
+                                <div class="input-group-text bg-transparent py-2"><i class="fa fa-lock"></i></div>
+                            </span>
+                            <input id="i2" class="form-control py-1 border-left-0 border" type="password" placeholder="Password" required/>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-center"><button type="submit" class="btn btn-primary mt-2 px-5">Log in</button></td>
+                </tr>
+                <tr>
+                    <td class="mt-3">
+                        <div class="password-remember mb-4 mt-2">
+                            <input class="form-check-input" type="checkbox" name="confirm" value="confirm"/>
+                            <label class="ms-1" for="confirm">Remember Me</label>
+                            <a class="d1" href="https://www.instagram.com/">Forgot Password?</a>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+    <br/>
+    <center>Don't have an account!<a href="https://www.instagram.com/">Sign up here.</a></center>
+    <script>
+        function validate() {
+            var un = document.getElementById("i1").value;
+            var pwd = document.getElementById("i2").value;
+            if(un.length < 5 || pwd.length < 5) {
+                document.getElementById("invalid-msg").innerHTML = `<p class="alert alert-danger">Invalid username or password</p>`;
+                return false;
+            }
+            return true;
+        }
+    </script>
+</body>
+</html>

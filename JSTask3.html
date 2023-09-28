@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSTask-3</title>
+    <style>
+        .container{
+            border: 1px solid black;
+            width: 30%;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <div class="container">
+            <form class="form m-5">
+                <table> 
+                    <tr>
+                        <td>
+                            <label class="form-label">1st Number:</label>
+                        </td>
+                        <td>
+                            <input id="firstNumber" type="number" required/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="form-label">2nd Number:</label>
+                        </td>
+                        <td>
+                            <input id="secondNumber" type="number" required/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <button onClick="multiplyBy(); return false;" class="btn btn-secondary" Value="Multiply">Multiply</button>
+                        </td>
+                        <td>
+                            <button onClick="divideBy(); return false;" class="btn btn-secondary" Value="Divide">Divide</button>
+                        </td>
+                    </tr>
+                </table>
+                <p>The Result is:</p>
+                <span id = "result"></span>
+                <script>
+                    function multiplyBy()
+                    {
+                        num1 = document.getElementById("firstNumber").value;
+                        num2 = document.getElementById("secondNumber").value;
+                        document.getElementById("result").innerHTML = num1 * num2;
+                    }
+
+                    function divideBy() 
+                    { 
+                        num1 = document.getElementById("firstNumber").value;
+                        num2 = document.getElementById("secondNumber").value;
+                        document.getElementById("result").innerHTML = num1 / num2;
+                    }
+                </script>
+            </form>
+        </div>
+    </center>
+</body>
+</html>
